@@ -31,7 +31,7 @@ def compChooseWord(hand, wordList, n):
     for word in wordList:
         # If you can construct the word from your hand
         # (hint: you can use isValidWord, or - since you don't really need to test if the word is in the wordList - you can make a similar function that omits that test)
-        if isValidWord(word, hand, wordList):
+        if isValidWordComp(word, hand):
             # Find out how much making that word is worth
             score = getWordScore(word, n)
             # If the score for that word is higher than your best score
@@ -42,6 +42,14 @@ def compChooseWord(hand, wordList, n):
     # return the best word you found.
     return best
 
+
+def isValidWordComp(word, hand):
+    modHand = hand.copy()
+    for letter in word:
+        if modHand.get(letter, 0) == 0:
+            return False
+        modHand[letter] -= 1
+    return True
 #
 # Problem #7: Computer plays a hand
 #
@@ -64,8 +72,26 @@ def compPlayHand(hand, wordList, n):
     wordList: list (string)
     n: integer (HAND_SIZE; i.e., hand size required for additional points)
     """
-    # TO DO ... <-- Remove this comment when you code this function
-    
+    score = 0
+    letters = calculateHandlen(hand)
+    # As long as there are still letters left in the hand:
+    while letters>0:
+        # Display the hand
+        print "Current Hand: ",
+        displayHand(hand)
+        # Ask user for input
+        comp = compChooseWord(hand, wordList, n)
+        if comp==None:
+            break
+        added = getWordScore(comp, n)
+        score += added
+        print '"' + comp + '"' + ' earned ' +  str(added) + " points. Total: " + str(score) + " points"
+        print
+        # Update the hand
+        letters -= len(comp)
+        hand = updateHand(hand, comp)
+    # Game is over (user entered a '.' or ran out of letters), so tell user the total score
+    print "Total score: " + str(score) + " points."
 #
 # Problem #8: Playing a game
 #
@@ -94,8 +120,51 @@ def playGame(wordList):
 
     wordList: list (string)
     """
-    # TO DO... <-- Remove this comment when you code this function
-    print "playGame not yet implemented." # <-- Remove this when you code this function
+    lastHand = None
+    while True:
+        start = raw_input("Enter n to deal a new hand, r to replay the last hand, or e to end game: ")
+        if start == 'e':
+            break
+        if start == 'r':
+            if lastHand is None:
+                print "You have not played a hand yet. Please play a new hand first!"
+                continue
+        if not start == 'n' and not start == 'r':
+            print "Invalid command."
+            print
+        else:
+            print
+            who = None
+            while True:
+                who = raw_input("Enter u to have yourself play, c to have the computer play: ")
+                if who == 'u' or who == 'c':
+                    print
+                    break
+                print "Invalid command."
+                print
+            if who == 'u':
+                if start == 'n':
+                    hand = dealHand(HAND_SIZE)
+                    lastHand = hand.copy()
+                    playHand(hand, wordList, HAND_SIZE)
+                    print
+                else:
+                    if lastHand is None:
+                        print "You have not played a hand yet. Please play a new hand first!"
+                    else:
+                        playHand(lastHand.copy(), wordList, HAND_SIZE)
+                    print
+            else:
+                if start == 'n':
+                    hand = dealHand(HAND_SIZE)
+                    lastHand = hand.copy()
+                    compPlayHand(hand, wordList, HAND_SIZE)
+                else:
+                    if lastHand is None:
+                        print "You have not played a hand yet. Please play a new hand first!"
+                    else:
+                        compPlayHand(lastHand.copy(), wordList, HAND_SIZE)
+                    print
 
         
 #
@@ -104,5 +173,6 @@ def playGame(wordList):
 if __name__ == '__main__':
     wordList = loadWords()
     playGame(wordList)
+
 
 

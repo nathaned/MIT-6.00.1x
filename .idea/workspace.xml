@@ -16,7 +16,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/MIT-6.00.1x$ps4a.coverage" NAME="ps4a Coverage Results" MODIFIED="1436895489108" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Word Game" />
+    <SUITE FILE_PATH="coverage/MIT-6.00.1x$ps4a.coverage" NAME="ps4a Coverage Results" MODIFIED="1436896841893" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Word Game" />
     <SUITE FILE_PATH="coverage/MIT-6.00.1x$test_ps4a.coverage" NAME="test_ps4a Coverage Results" MODIFIED="1436894866969" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Word Game" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -31,8 +31,8 @@
       <file leaf-file-name="ps4a.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Word Game/ps4a.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.055555556">
-              <caret line="204" column="0" selection-start-line="204" selection-start-column="0" selection-end-line="263" selection-end-column="75" />
+            <state vertical-scroll-proportion="0.4722222">
+              <caret line="277" column="1" selection-start-line="277" selection-start-column="1" selection-end-line="277" selection-end-column="1" />
               <folding>
                 <element signature="e#652#1127#0" expanded="false" />
                 <element signature="e#1165#1545#0" expanded="false" />
@@ -430,8 +430,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Word Game/ps4a.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.055555556">
-          <caret line="204" column="0" selection-start-line="204" selection-start-column="0" selection-end-line="263" selection-end-column="75" />
+        <state vertical-scroll-proportion="0.4722222">
+          <caret line="277" column="1" selection-start-line="277" selection-start-column="1" selection-end-line="277" selection-end-column="1" />
           <folding>
             <element signature="e#652#1127#0" expanded="false" />
             <element signature="e#1165#1545#0" expanded="false" />
